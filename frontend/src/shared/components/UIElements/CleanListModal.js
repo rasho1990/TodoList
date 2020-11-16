@@ -10,45 +10,43 @@ const CleanListModal = ({ changeOnClick, refreshTodo }) => {
     useEffect(() => {
         setOpen(changeOnClick);
     }, [changeOnClick])
-    const clearTodo = async () => {
-        try {
-            await sendRequest(
-                `http://localhost:5000/api/todolist/clearalltasks`,
-                'POST',
-                JSON.stringify({
-                    userId: auth.userId,
-                }),
-                {
-                    'Content-Type': 'application/json',
-                    Authorization: 'Bearer ' + auth.token,
-                }
-            );
-            setOpen(false);
-            refreshTodo();
-        } catch (err) {
-            setOpen(false);
-        }
+    const clearTodos = async () => {
+      try {
+        await sendRequest(
+          `http://localhost:5000/api/todolist/clearalltasks`,
+          "POST",
+          JSON.stringify({
+            userId: auth.userId,
+          }),
+          {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + auth.token,
+          }
+        );
+        setOpen(false);
+        refreshTodo();
+      } catch (err) {
+        setOpen(false);
+      }
     }
-    console.log(open)
     return (
         <React.Fragment>
             {error && <ErrorModal error={error} onClear={clearError} />}
-            <Modal class="ui basic modal"
+            <Modal className="ui basic modal"
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
                 open={open}
-            // trigger={<Button color='green'> Yes </Button>}
             >
-                {isLoading && <div class="ui active inverted dimmer">
-                    <div class="ui text loader">Loading</div>
+                {isLoading && <div className="ui active inverted dimmer">
+                    <div className="ui text loader">Loading</div>
                 </div>}
                 <Modal.Header>Clear Tasks </Modal.Header>
                 <Modal.Content ><h4>Are you sure you want to delete all tasks?!</h4></Modal.Content>
                 <Modal.Actions>
                     <Button color='black' onClick={() => setOpen(false)}>
                         No
-        </Button>
-                    <Button color='green' onClick={clearTodo}>
+                    </Button>
+                    <Button color='green' onClick={clearTodos}>
                         Yes
                     </Button>
                 </Modal.Actions>

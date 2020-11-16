@@ -7,7 +7,7 @@ const todoSchema = new Schema({
   priority: { type: String, required: true },
   date: { type: String, required: true },
   notes: { type: String, required: true },
-  compelete: { type: String, required: true },
+  complete: { type: String, required: true },
   creator: { type: mongoose.Types.ObjectId, required: true, ref: 'User' }
 });
 

@@ -27,13 +27,13 @@ const addTask = async (req, res, next) => {
         next(new HttpError('The input is incorrect!'));
     }
 
-    const { name, priority, date, notes, compelete, userId } = req.body;
+    const { name, priority, date, notes, complete, userId } = req.body;
     const createdTodo = new Todo({
         name: name,
         priority: priority,
         date: date,
         notes: notes,
-        compelete: compelete,
+        complete: complete,
         creator: userId,
     });
 
@@ -80,7 +80,7 @@ const updateTask = async (req, res, next) => {
         const error = new HttpError('The input is incorrect!');
         return next(error);
     }
-    const { name, priority, date, notes, compelete, userId } = req.body;
+    const { name, priority, date, notes, complete, userId } = req.body;
     const { todoId } = req.params;
 
     let todo;
@@ -104,7 +104,7 @@ const updateTask = async (req, res, next) => {
     todo.priority = priority;
     todo.date = date;
     todo.notes = notes;
-    todo.compelete = compelete;
+    todo.complete = complete;
 
     try {
         await todo.save();

@@ -30,13 +30,13 @@ const DeleteTask = ({ changeOnClick, refreshTodo, oldtask }) => {
     return (
         <React.Fragment>
             {error && <ErrorModal error={error} onClear={clearError} />}
-            <Modal class="ui basic modal"
+            <Modal className="ui basic modal"
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
                 open={open}
             >
-                {isLoading && <div class="ui active inverted dimmer">
-                    <div class="ui text loader">Loading</div>
+                {isLoading && <div className="ui active inverted dimmer">
+                    <div className="ui text loader">Loading</div>
                 </div>}
                 <Modal.Header>Clear Tasks </Modal.Header>
                 <Modal.Content ><h4>Are you sure you want to delete this task?!</h4></Modal.Content>

@@ -16,8 +16,7 @@ const AddTask = ({ changeOnClick, refreshTodo }) => {
     useEffect(() => {
         setOpen(changeOnClick);
     }, [changeOnClick])
-    const addTodo = async () => {
-        console.log(name)
+    const fetchTodos = async () => {
         try {
             await sendRequest(
                 `http://localhost:5000/api/todolist/addtask`,
@@ -28,7 +27,7 @@ const AddTask = ({ changeOnClick, refreshTodo }) => {
                     priority: priority,
                     notes: notes,
                     date: value,
-                    compelete: done
+                    complete: done
                 }),
                 {
                     'Content-Type': 'application/json',
@@ -49,15 +48,15 @@ const AddTask = ({ changeOnClick, refreshTodo }) => {
             >
                 <Modal.Header>Add a new Task </Modal.Header>
                 <Modal.Content >
-                    {isLoading && <div class="ui active inverted dimmer">
-                        <div class="ui text loader">Loading</div>
+                    {isLoading && <div className="ui active inverted dimmer">
+                        <div className="ui text loader">Loading</div>
                     </div>}
-                    <div class="ui form">
-                        <div class="field">
+                    <div className="ui form">
+                        <div className="field">
                             <label>Task Name</label>
                             <input type="text" placeholder="Task Name" onChange={event => setName(event.target.value)} />
                             <label>Priority</label>
-                            <select class="ui search dropdown" onChange={event => setPriority(event.target.value)} >
+                            <select className="ui search dropdown" onChange={event => setPriority(event.target.value)} >
                                 <option value="" disabled>Choose a priority</option>
                                 <option defaultValue="0" > High</option>
                                 <option value="1"> Normal</option>
@@ -66,7 +65,7 @@ const AddTask = ({ changeOnClick, refreshTodo }) => {
                             <label>Notes</label>
                             <textarea rows="2" placeholder="Notes..." onChange={event => setNotes(event.target.value)} ></textarea>
                             <label>Done</label>
-                                <select class="ui search dropdown" onChange={event => setDone(event.target.value)}>
+                                <select className="ui search dropdown" onChange={event => setDone(event.target.value)}>
                                     <option value="0" > Yes</option>
                                     <option value="1"> No</option>
                                     <option value="2"> In Progress</option>
@@ -87,7 +86,7 @@ const AddTask = ({ changeOnClick, refreshTodo }) => {
                         content="Save"
                         labelPosition='right'
                         icon='checkmark'
-                        onClick={addTodo}
+                        onClick={fetchTodos}
                         positive
                     />
                 </Modal.Actions>

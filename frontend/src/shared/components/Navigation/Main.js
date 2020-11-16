@@ -21,21 +21,21 @@ const Main = () => {
             <Menu.Item
                 name='Home'
                 onClick={handleItemHome}
-            ><i class=" large home blue icon"></i></Menu.Item>
+            ><i className=" large home blue icon"></i></Menu.Item>
             {auth.isLoggedIn && (<Menu.Item
                 name='MY To Do List'
                 onClick={handleItemTodo}
-            ><i class=" large tasks blue icon" ></i></Menu.Item>)}
+            ><i className=" large tasks blue icon" ></i></Menu.Item>)}
             {auth.isLoggedIn && (<Menu.Item
                 name='User'
                 onClick={handleItemProfile}
-            ><i class=" large user blue icon" ></i></Menu.Item>)}
+            ><i className=" large user blue icon" ></i></Menu.Item>)}
             <Menu.Menu position='right' color='blue' >
                 {auth.isLoggedIn && (
                     <Menu.Item
                         name=''
                         onClick={auth.logout}>
-                        <i class=" large log out blue icon"></i>
+                        <i className=" large log out blue icon"></i>
                     </Menu.Item>
                 )}
                 {!auth.isLoggedIn && (

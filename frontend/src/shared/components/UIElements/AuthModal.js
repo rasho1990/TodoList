@@ -8,19 +8,23 @@ const  AuthModal=()=> {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={ <Menu.Item><i class=" large sign in blue icon" ></i></Menu.Item>}
+      trigger={
+        <Menu.Item>
+          <i className=" large sign in blue icon"></i>
+        </Menu.Item>
+      }
     >
       <Modal.Header>Welcome to TodoList.com </Modal.Header>
-      <Modal.Content >
+      <Modal.Content>
         <Auth />
       </Modal.Content>
       <Modal.Actions>
-        <Button color='black' onClick={() => setOpen(false)}>
+        <Button color="black" onClick={() => setOpen(false)}>
           Cancel
         </Button>
       </Modal.Actions>
     </Modal>
-  )
+  );
 }
 
 export default AuthModal
