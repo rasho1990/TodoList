@@ -21,7 +21,7 @@ const UpdateTask = ({ changeOnClick, refreshTodo, oldtask }) => {
              
             setName(oldtask.name)
             setPriority(oldtask.priority)
-            setDone(oldtask.compelete)
+            setDone(oldtask.complete)
             setNotes(oldtask.notes)
         }
     }, [changeOnClick])
@@ -37,7 +37,7 @@ const UpdateTask = ({ changeOnClick, refreshTodo, oldtask }) => {
                     priority: priority,
                     notes: notes,
                     date: value,
-                    compelete: done
+                    complete: done
                 }),
                 {
                     'Content-Type': 'application/json',
@@ -59,15 +59,15 @@ const UpdateTask = ({ changeOnClick, refreshTodo, oldtask }) => {
             >
                 <Modal.Header>Add a new Task </Modal.Header>
                 {oldtask && <Modal.Content >
-                    {isLoading && <div class="ui active inverted dimmer">
-                        <div class="ui text loader">Loading</div>
+                    {isLoading && <div className="ui active inverted dimmer">
+                        <div className="ui text loader">Loading</div>
                     </div>}
-                    <div class="ui form">
-                        <div class="field">
+                    <div className="ui form">
+                        <div className="field">
                             <label>Task Name</label>
                             <input type="text" onChange={event => setName(event.target.value)} defaultValue={oldtask.name} />
                             <label>Priority</label>
-                            <select class="ui search dropdown" onChange={event => setPriority(event.target.value)} defaultValue={oldtask.priority}>
+                            <select className="ui search dropdown" onChange={event => setPriority(event.target.value)} defaultValue={oldtask.priority}>
                                 <option value="0" > High</option>
                                 <option value="1"> Normal</option>
                                 <option value="2"> Low</option>
@@ -75,7 +75,7 @@ const UpdateTask = ({ changeOnClick, refreshTodo, oldtask }) => {
                             <label>Notes</label>
                             <textarea rows="2" placeholder="Notes..." onChange={event => setNotes(event.target.value)} defaultValue={oldtask.notes}></textarea>
                             <label>Done</label>
-                            <select class="ui search dropdown" onChange={event => setDone(event.target.value)} defaultValue={oldtask.compelete}>
+                            <select className="ui search dropdown" onChange={event => setDone(event.target.value)} defaultValue={oldtask.complete}>
                                 <option value="0" > Yes</option>
                                 <option value="1"> No</option>
                                 <option value="2"> In Progress</option>

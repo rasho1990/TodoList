@@ -6,7 +6,7 @@ const ImageUpload = ({ id, centered, onInput, initialImageUrl }) => {
   const [file, setFile] = useState();
   const [previewImageUrl, setPreviewImageUrl] = useState(initialImageUrl);
   const [isValid, setIsValid] = useState(false);
-  const uploadedHandler = (event) => {
+  const handleUpload = (event) => {
     let uploadedFile;
     let fileIsValid = isValid;
     // First check if there are files uploaded
@@ -50,7 +50,7 @@ const ImageUpload = ({ id, centered, onInput, initialImageUrl }) => {
         style={{ display: "none" }}
         type="file"
         accept=".jpg,.png,.jpeg"
-        onChange={uploadedHandler}
+        onChange={handleUpload}
       />
       <div className={`image-upload ${centered && "center"}`}>
         <div className="image-upload__preview">

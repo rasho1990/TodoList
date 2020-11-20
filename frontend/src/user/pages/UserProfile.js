@@ -21,21 +21,21 @@ const UserProfile = () => {
     }, [sendRequest]);
     return (<React.Fragment>
         {error && <ErrorModal error={error} /> }
-        <div class="ui center aligned basic segment">
+        <div className="ui center aligned basic segment">
             {isLoading &&
-                <div class="ui active inverted dimmer">
-                    <div class="ui text loader">Loading</div>
+                <div className="ui active inverted dimmer">
+                    <div className="ui text loader">Loading</div>
                 </div>}
-            {users && !error && <div class="ui centered card ">
-                <div class="image">
+            {users && !error && <div className="ui centered card ">
+                <div className="image">
                     <img src={users[0].image} alt={users[0].name} />
                 </div>
-                <div class="content">
+                <div className="content">
                     <h1>{users[0].name}</h1>
-                    <div class="ui list">
-                        <div class="item">
-                            <i class="mail icon"></i>
-                            <div class="content">
+                    <div className="ui list">
+                        <div className="item">
+                            <i className="mail icon"></i>
+                            <div className="content">
                                 <a href={users[0].email}>{users[0].email}</a>
                             </div>
                         </div>

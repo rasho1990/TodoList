@@ -13,6 +13,8 @@ const TodoList = () => {
   const updateTodoList = () => {
     setTodoRender(Math.random());
   }
+  
+  // It's hard to understand what is op and setop. Can be optionOne, setOptionOne
   const [op1, setop1] = useState();
   const [op2, setop2] = useState();
   const [op3, setop3] = useState();
@@ -45,36 +47,36 @@ const TodoList = () => {
   return (
     <React.Fragment>
       {error && <ErrorModal error={error} onClear={clearError} />}
-      <div class="ui center aligned basic segment">
-        <div class="ui teal labeled icon button" onClick={addTask}>
+      <div className="ui center aligned basic segment">
+        <div className="ui teal labeled icon button" onClick={addTask}>
           Create New Task
-            <i class="add icon" ></i>
+            <i className="add icon" ></i>
         </div>
         <AddTask changeOnClick={op1} refreshTodo={updateTodoList} />
         <CleanListModal changeOnClick={op2} refreshTodo={updateTodoList}></CleanListModal>
         <UpdateTask changeOnClick={op3} refreshTodo={updateTodoList} oldtask={t} />
         <DeleteTask changeOnClick={op4} refreshTodo={updateTodoList} oldtask={t} />
-        <div class="negative ui button teal labeled icon button" onClick={clearTasks}>
+        <div className="negative ui button teal labeled icon button" onClick={clearTasks}>
           Clear Your List
-    <i class="trash icon"></i>
+    <i className="trash icon"></i>
         </div>
       </div>
-      <table class="ui celled structured table">
+      <table className="ui celled structured table">
         <thead>
           <tr>
-            <th rowspan="4">Task Name</th>
-            <th rowspan="4">Priority</th>
-            <th rowspan="4">Due Date</th>
-            <th rowspan="4">Compelete</th>
-            <th rowspan="4">Notes</th>
-            <th class="right aligned"> <div class="ui icon input right aligned">
+            <th rowSpan="4">Task Name</th>
+            <th rowSpan="4">Priority</th>
+            <th rowSpan="4">Due Date</th>
+            <th rowSpan="4">Complete</th>
+            <th rowSpan="4">Notes</th>
+            <th className="right aligned"> <div className="ui icon input right aligned">
               <input type="text" placeholder="Search..." />
-              <i class="search icon"></i>
+              <i className="search icon"></i>
             </div></th>
           </tr>
         </thead>
-        {isLoading && <div class="ui active inverted dimmer">
-          <div class="ui text loader">Loading</div>
+        {isLoading && <div className="ui active inverted dimmer">
+          <div className="ui text loader">Loading</div>
         </div>}
         <tbody>
           {tasks && <React.Fragment>
@@ -82,26 +84,26 @@ const TodoList = () => {
               return <tr>
                 <td>{t.name}</td>
                 <td>{t.priority === '0' ?
-                  <i class=" large heart red icon" /> : (t.priority === '1') ? <i class=" large heart yellow icon" /> : <i class=" large heart green icon" />
+                  <i className=" large heart red icon" /> : (t.priority === '1') ? <i className=" large heart yellow icon" /> : <i className=" large heart green icon" />
                 }</td>
-                <td class="right aligned">{t.date}</td>
-                <td class="center aligned">
-                  {t.compelete === '0' ? <i class="large green checkmark icon"></i> : (t.compelete === '1') ? <i class="large red close icon"></i> : <i class="large yellow motorcycle icon"></i>}
+                <td className="right aligned">{t.date}</td>
+                <td className="center aligned">
+                  {t.complete === '0' ? <i className="large green checkmark icon"></i> : (t.complete === '1') ? <i className="large red close icon"></i> : <i className="large yellow motorcycle icon"></i>}
                 </td>
                 <td>{t.notes}</td>
-                <td class="center aligned"> <div class="ui button teal labeled icon button" onClick={() => {
+                <td className="center aligned"> <div className="ui button teal labeled icon button" onClick={() => {
                   setT(t);
                   return updateTask();
                 }} >
                   Edit
-                 <i class="large edit icon"></i>
+                 <i className="large edit icon"></i>
                 </div>
-                  <div class="negative ui button teal labeled icon button" onClick={() => {
+                  <div className="negative ui button teal labeled icon button" onClick={() => {
                   setT(t);
                   return deleteTask();
                 }}>
                     Delete
-    <i class="large trash icon"></i>
+                  <i className="large trash icon"></i>
                   </div>
                 </td>
               </tr>
