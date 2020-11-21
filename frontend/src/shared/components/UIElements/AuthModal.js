@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Modal, Menu } from 'semantic-ui-react'
 import Auth from '../../../user/pages/Auth'
 const  AuthModal=()=> {
@@ -11,7 +12,7 @@ const  AuthModal=()=> {
       trigger={
         <Menu.Item>
           <i className=" large sign in blue icon"></i>
-        </Menu.Item>
+        </Menu.Item> 
       }
     >
       <Modal.Header>Welcome to TodoList.com </Modal.Header>

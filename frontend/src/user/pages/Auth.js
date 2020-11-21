@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useHistory } from "react-router-dom";
 import Card from '../../shared/components/UIElements/Card';
 import Input from '../../shared/components/FormElements/Input';
 import Button from '../../shared/components/FormElements/Button';
@@ -14,6 +15,7 @@ import { useHttpClient } from '../../shared/hooks/http-hook';
 import { AuthContext } from '../../shared/context/auth-context';
 import './Auth.css';
 const Auth = () => {
+  let history = useHistory();
   const auth = useContext(AuthContext);
   const [isLoginMode, setIsLoginMode] = useState(true);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -75,6 +77,7 @@ const Auth = () => {
           }
         );
         auth.login(responseData.userId, responseData.token);
+        history.push("/home");
       } catch (err) {}
     } else {
       try {
@@ -89,6 +92,7 @@ const Auth = () => {
           formData
         );
         auth.login(responseData.userId, responseData.token);
+        history.push("/home");
       } catch (err) {}
     }
   };

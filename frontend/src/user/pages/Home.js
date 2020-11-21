@@ -3,7 +3,6 @@ import { Container, Header, Message, Segment } from "semantic-ui-react";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { AuthContext } from './../../shared/context/auth-context';
 import ImageCarousel from "../components/ImageCarousel";
-import { Link } from "react-router-dom";
 const Home = () => {
     const auth = useContext(AuthContext);
     return (
@@ -12,7 +11,7 @@ const Home = () => {
                 To Do List
             </Header>
             { !auth.token ? < Message info>
-                How To Actually Get The Job Done With A To-Do List ?! Break it down and <Link to='/auth'>Sign up</Link> for free
+                How To Actually Get The Job Done With A To-Do List ?! Break it down and make your todo list for free
       </Message> : < Message info>
                     Welcome our best member feel free to make your todo list ready
       </Message>}

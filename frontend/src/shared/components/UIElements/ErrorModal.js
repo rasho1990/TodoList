@@ -3,7 +3,7 @@ import { Button, Modal } from 'semantic-ui-react'
 const ErrorModal = props => {
   const [open, setOpen] = useState(true)
   return (
-    <Modal
+    <Modal      
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}

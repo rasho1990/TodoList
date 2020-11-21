@@ -3,7 +3,7 @@ import { Menu, Icon } from 'semantic-ui-react'
 const Footer = () => {
     const handleItemClick = () => (e, { name }) => this.setState({ activeItem: name })
     return (
-      <div className="ui sticky">
+     
         <Menu compact icon="labeled" floated="right">
           <Menu.Item
             link
@@ -12,7 +12,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             onClick={handleItemClick}
           >
-            <Icon name="github" size="big" />
+            <Icon name="github" size="large" color="blue"/>
           </Menu.Item>
           <Menu.Item
             link
@@ -21,10 +21,10 @@ const Footer = () => {
             rel="noopener noreferrer"
             onClick={handleItemClick}
           >
-            <Icon name="linkedin" size="big" />
+            <Icon name="linkedin" size="large" color="blue"/>
           </Menu.Item>
         </Menu>
-      </div>
+      
     );
 }
 export default Footer;

@@ -4,7 +4,6 @@ const { validationResult } = require('express-validator');
 const Todo = require('../models/todoList')
 const User = require('../models/user')
 const getAllTasks = async (req, res, next) => {
-
     let tasks;
     try {
         tasks = await Todo.find({});
@@ -16,8 +15,6 @@ const getAllTasks = async (req, res, next) => {
         return next(error);
     }
     res.json({ todolist: tasks.map(task => task.toObject({ getters: true })) });
-
-
 }
 const addTask = async (req, res, next) => {
 
@@ -36,7 +33,7 @@ const addTask = async (req, res, next) => {
         complete: complete,
         creator: userId,
     });
-
+    console.log(date)
     let user;
     // Store todo in User
     try {
@@ -52,11 +49,11 @@ const addTask = async (req, res, next) => {
     }
 
     try {
-        
+
         const session = await mongoose.startSession();
-        session.startTransaction(); 
+        session.startTransaction();
         await createdTodo.save({ session });
-        user.todos.push(createdTodo); 
+        user.todos.push(createdTodo);
         await user.save({ session });
         await session.commitTransaction();
     } catch (err) {
@@ -73,16 +70,13 @@ const addTask = async (req, res, next) => {
 
 }
 const updateTask = async (req, res, next) => {
-    console.log('got an update request')
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.log(errors);
         const error = new HttpError('The input is incorrect!');
         return next(error);
     }
     const { name, priority, date, notes, complete, userId } = req.body;
     const { todoId } = req.params;
-
     let todo;
     try {
         todo = await Todo.findById(todoId);
@@ -94,18 +88,16 @@ const updateTask = async (req, res, next) => {
         );
         return next(error);
     }
-    
+
     if (todo.creator.toString() !== userId) {
         const error = new HttpError('You are not allowed to edit this task!', 401);
         return next(error);
     }
-
     todo.name = name;
     todo.priority = priority;
     todo.date = date;
     todo.notes = notes;
     todo.complete = complete;
-
     try {
         await todo.save();
     } catch (err) {
@@ -115,12 +107,8 @@ const updateTask = async (req, res, next) => {
         );
         return next(error);
     }
-
     const modifiedPlace = todo.toObject({ getters: true });
-
     res.status(200).json(modifiedPlace);
-
-
 }
 const deleteTask = async (req, res, next) => {
     const errors = validationResult(req);
@@ -133,7 +121,7 @@ const deleteTask = async (req, res, next) => {
     const { todoId } = req.params;
     let todo;
     try {
-        todo = await Todo.findById(todoId).populate('creator'); 
+        todo = await Todo.findById(todoId).populate('creator');
     } catch (err) {
         const error = new HttpError(
             'Something went wrong, could not delete task.',
@@ -214,15 +202,15 @@ const clearTasks = async (req, res, next) => {
         const error = new HttpError('User does not exist!');
         return next(error);
     }
-    if (todo.length===0) {
-        const error = new HttpError('Todo is empty !',404);
+    if (todo.length === 0) {
+        const error = new HttpError('Todo is empty !', 404);
         return next(error);
     }
-    let i=0;
+    let i = 0;
     try {
         const session = await mongoose.startSession();
         session.startTransaction();
-        while(i<todo.length){
+        while (i < todo.length) {
             await todo[i].remove({ session });
             i++;
         };
@@ -236,7 +224,7 @@ const clearTasks = async (req, res, next) => {
         );
         return next(error);
     }
-    
+
     res.status(200).json({ msg: 'Tasks successfully deleted!' });
 
 

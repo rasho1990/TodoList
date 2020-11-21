@@ -32,7 +32,7 @@ const CleanListModal = ({ changeOnClick, refreshTodo }) => {
     return (
         <React.Fragment>
             {error && <ErrorModal error={error} onClear={clearError} />}
-            <Modal className="ui basic modal"
+            <Modal  
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
                 open={open}
