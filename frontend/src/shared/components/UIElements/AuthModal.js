@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Button, Modal, Menu } from 'semantic-ui-react'
 import Auth from '../../../user/pages/Auth'
 const  AuthModal=()=> {

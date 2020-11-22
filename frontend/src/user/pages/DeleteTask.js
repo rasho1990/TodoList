@@ -13,7 +13,7 @@ const DeleteTask = ({ changeOnClick, refreshTodo, oldtask }) => {
     const deleteTask = async () => {
         try {
             await sendRequest(
-                `http://localhost:5000/api/todolist/deletetask/${oldtask.id}`,
+                `${process.env.REACT_APP_BACKEND_URL}/todolist/deletetask/${oldtask.id}`,
                 'POST',
                 JSON.stringify({
                     userId: auth.userId,

@@ -96,8 +96,6 @@ const Auth = () => {
       } catch (err) {}
     }
   };
-  //? always consoling error but what if there is no error
-  console.log(error);
   return (
     <React.Fragment>
       {error && <ErrorModal error={error} onClear={clearError} />}

@@ -39,7 +39,7 @@ const UpdateTask = ({ changeOnClick, refreshTodo, oldtask }) => {
 
         try {
             await sendRequest(
-                `http://localhost:5000/api/todolist/updatetask/${oldtask.id}`,
+                `${process.env.REACT_APP_BACKEND_URL}/todolist/updatetask/${oldtask.id}`,
                 'POST',
                 JSON.stringify({
                     userId: auth.userId,
@@ -88,17 +88,16 @@ const UpdateTask = ({ changeOnClick, refreshTodo, oldtask }) => {
                             {validationHandler(notes, 20) === false && <ValidationError err="Please enter a valid note with 20 letters or more" />}
                             <label style={{ marginTop: "10px" }}>Done</label>
                             <select className="ui search dropdown" onChange={event => setDone(event.target.value)} defaultValue={oldtask.complete}>
-                                <option value="0" > Yes</option>
-                                <option value="1"> No</option>
-                                <option value="2"> In Progress</option>
+                                <option value="0" >NO</option>
+                                <option value="1">In Progress</option>
+                                <option value="2">YES</option>
                             </select>
                             <label style={{ marginTop: "10px" }}>Pick a time and date</label>
                         </div>
                     </div>
                     <DateTimePicker
-                        onChange={onChange}
-                        
-                        value={new Date(oldtask.date)}
+                        onChange={onChange} 
+                        value={value}
                     />
                      {value === null && <ValidationError err="Please enter a valid date" />}
                 </Modal.Content>}

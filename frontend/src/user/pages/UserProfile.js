@@ -7,7 +7,7 @@ const UserProfile = () => {
     const auth = useContext(AuthContext);
     const { isLoading, error, sendRequest } = useHttpClient();
     const fetchUsers = async () => {
-        const url = "http://localhost:5000/api/users";
+        const url = `${process.env.REACT_APP_BACKEND_URL}/users`;
         try {
             const responseData = await sendRequest(url);
             setUsers(responseData.users.filter(u => u.id === auth.userId));

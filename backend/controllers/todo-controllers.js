@@ -20,7 +20,7 @@ const addTask = async (req, res, next) => {
 
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.log(errors);
+        
         next(new HttpError('The input is incorrect!'));
     }
 
@@ -35,7 +35,7 @@ const addTask = async (req, res, next) => {
     });
     console.log(date)
     let user;
-    // Store todo in User
+    
     try {
         user = await User.findById(userId);
     } catch (err) {

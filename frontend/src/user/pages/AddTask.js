@@ -30,7 +30,7 @@ const AddTask = ({ changeOnClick, refreshTodo }) => {
     const fetchTodos = async () => {
         try {
             await sendRequest(
-                `http://localhost:5000/api/todolist/addtask`,
+                `${process.env.REACT_APP_BACKEND_URL}/todolist/addtask`,
                 'POST',
                 JSON.stringify({
                     userId: auth.userId,
@@ -89,9 +89,9 @@ const AddTask = ({ changeOnClick, refreshTodo }) => {
                             {validationHandler(notes, 20) === false && <ValidationError err="Please enter a valid note with 20 letters or more" />}
                             <label style={{ marginTop: "10px" }}>Done</label>
                             <select className="ui search dropdown" onChange={event => setDone(event.target.value)}>
-                                <option value="0" > Yes</option>
-                                <option value="1"> No</option>
-                                <option value="2"> In Progress</option>
+                                <option value="0" >NO</option>
+                                <option value="1">In Progress</option>
+                                <option value="2">YES</option>
                             </select>
                             <label style={{ marginTop: "10px" }}>Pick a time and date</label>
                         </div>

@@ -13,7 +13,7 @@ const CleanListModal = ({ changeOnClick, refreshTodo }) => {
     const clearTodos = async () => {
       try {
         await sendRequest(
-          `http://localhost:5000/api/todolist/clearalltasks`,
+          `${process.env.REACT_APP_BACKEND_URL}/todolist/clearalltasks`,
           "POST",
           JSON.stringify({
             userId: auth.userId,
