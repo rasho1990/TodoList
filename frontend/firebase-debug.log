@@ -1,0 +1,73 @@
+[debug] [2020-11-24T14:55:40.108Z] ----------------------------------------------------------------------
+[debug] [2020-11-24T14:55:40.110Z] Command:       C:\Users\320083~1\DOWNLO~1\firebase-tools-instant-win.exe C:\Users\320083235\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\bin\firebase init
+[debug] [2020-11-24T14:55:40.110Z] CLI Version:   8.16.2
+[debug] [2020-11-24T14:55:40.110Z] Platform:      win32
+[debug] [2020-11-24T14:55:40.110Z] Node Version:  v12.18.1
+[debug] [2020-11-24T14:55:40.112Z] Time:          Tue Nov 24 2020 15:55:40 GMT+0100 (Central European Standard Time)
+[debug] [2020-11-24T14:55:40.112Z] ----------------------------------------------------------------------
+[debug] [2020-11-24T14:55:40.112Z] 
+[debug] [2020-11-24T14:55:40.119Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-24T14:55:40.120Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\320083235\Desktop\TodoList\TodoList_Project\frontend
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2020-11-24T14:57:02.586Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+ {"projectId":"todolist-rasho","name":"todolist-rasho"}
+[debug] [2020-11-24T14:57:03.521Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 24 Nov 2020 14:57:03 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=751","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-24T14:57:03.524Z] > refreshing access token with scopes: []
+[debug] [2020-11-24T14:57:03.526Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-11-24T14:57:03.857Z] <<< HTTP RESPONSE 200 {"date":"Tue, 24 Nov 2020 14:57:03 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-24T14:57:03.875Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7191964505587426912 [none]
+[debug] [2020-11-24T14:57:04.780Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7191964505587426912 200
+[debug] [2020-11-24T14:57:04.781Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7191964505587426912 {"name":"operations/cp.7191964505587426912"}
+[debug] [2020-11-24T14:57:05.283Z] [Project Creation Poller] Retrying task index 0
+[debug] [2020-11-24T14:57:05.283Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7191964505587426912 [none]
+[debug] [2020-11-24T14:57:06.143Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7191964505587426912 200
+[debug] [2020-11-24T14:57:06.143Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7191964505587426912 {"name":"operations/cp.7191964505587426912","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true}}
+[debug] [2020-11-24T14:57:07.162Z] [Project Creation Poller] Retrying task index 0
+[debug] [2020-11-24T14:57:07.163Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7191964505587426912 [none]
+[debug] [2020-11-24T14:57:08.028Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7191964505587426912 200
+[debug] [2020-11-24T14:57:08.029Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7191964505587426912 {"name":"operations/cp.7191964505587426912","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"1051697351992","projectId":"todolist-rasho","lifecycleState":"ACTIVE","name":"todolist-rasho","createTime":"2020-11-24T14:57:03.419Z"}}
+[debug] [2020-11-24T14:57:08.032Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-11-24T14:57:08.033Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-11-24T14:57:08.352Z] <<< HTTP RESPONSE 200 {"date":"Tue, 24 Nov 2020 14:57:08 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-24T14:57:08.368Z] >>> HTTP REQUEST POST https://firebase.googleapis.com/v1beta1/projects/todolist-rasho:addFirebase  
+ 
+[debug] [2020-11-24T14:57:08.989Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Tue, 24 Nov 2020 14:57:09 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-24T14:57:08.989Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2020-11-24T14:57:08.991Z] HTTP Error: 403, The caller does not have permission
+[debug] [2020-11-24T14:57:08.994Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (C:\Users\320083235\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Request._callback (C:\Users\320083235\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\api.js:41:35)
+    at Request.self.callback (C:\Users\320083235\.cache\firebase\tools\lib\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at Request.<anonymous> (C:\Users\320083235\.cache\firebase\tools\lib\node_modules\request\request.js:1154:10)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at IncomingMessage.<anonymous> (C:\Users\320083235\.cache\firebase\tools\lib\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (events.js:421:28)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:482:12)
+    at endReadableNT (_stream_readable.js:1221:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to add Firebase to Google Cloud Platform project. See firebase-debug.log for more info.
